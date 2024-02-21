@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ORC Social Media</title>
+</head>
+<body>
+    <h1>ORC Subjects APP</h1>
+    <h2>Subjects</h2>
+    <ul class="subjects">
+        <% for(let i=0; i < info.length; i++) {%>
+            <li class="subject">
+                <span>Name:<%= info[i].firstName %></span>
+                <span><%= info[i].lastName %></span>
+                <span>Age:<%= info[i].age %></span>
+                <span>Description:<%= info[i].description %></span>
+                <span class='fa fa-thumbs-up'></span>
+                <span class='fa fa-trash'></span>
+            </li>
+        <% } %>
+        </ul>
+
+    <h2>Add A Subject:</h2>
+
+    <form action="/addSubject" method="POST">
+        <input type="text" placeholder="First Name" name="firstName">
+        <input type="text" placeholder="Last Name" name="lastName">
+        <input type="text" placeholder="Age" name="age">
+        <input type="text" placeholder="Description" name="description">
+        <input type="submit">
+    </form>
+    <script src='js/main.js'></script>
+</body>
+</html>
